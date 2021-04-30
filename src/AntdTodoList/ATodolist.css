@@ -1,0 +1,7 @@
+.todo_container {
+  width: 600px;
+  height: 500px;
+  /* border: 1px solid slategray; */
+  margin: 0 auto;
+  margin-top: 20px;
+}
