@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import store from '../Store/index'
-import { getInputChangeAction,getAddItemAction,getDeleteItemAction } from '../Store/actionCreateors'
-import {ATodoListUI} from './ATodoListUI'
+import { getTodoList, getInputChangeAction, getAddItemAction, getDeleteItemAction } from '../Store/actionCreateors'
+import { ATodoListUI } from './ATodoListUI'
 
 /** 容器组件 */
 class ATodoList extends Component {
@@ -15,7 +15,10 @@ class ATodoList extends Component {
 		store.subscribe(this.handleStoreChange)
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		// 使用 redux-thunk，可以将 action 设置为一个函数
+		store.dispatch(getTodoList())
+	}
 
 	render() {
 		const { inputValue, list } = this.state

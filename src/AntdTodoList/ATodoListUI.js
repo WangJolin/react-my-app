@@ -22,7 +22,7 @@ const ATodoListUI = (props) => {
                 style={{ marginTop: '10px', width: '500px' }}
                 bordered
                 dataSource={list}
-                renderItem={item => <List.Item onClick={index => handleItemDelete(index)}>{item}</List.Item>}
+                renderItem={(item, index) => <List.Item onClick={() => handleItemDelete(index)}>{item}</List.Item>}
             />
         </div>
     )
